@@ -5,7 +5,7 @@ int a[200005];
 
 int main()
 {
-	int n; cin >> n; for(int i=0;i<n;i++) cin >> a[i];
+    int n; cin >> n; for(int i=0;i<n;i++) cin >> a[i];
     for(int i=(n-1)/2;i>=0;i--)
     {
         for(int j=i;(2*j+1)<n;)
@@ -19,5 +19,5 @@ int main()
         }
     }
     for(int i=0;i<n;i++) cout << a[i] << " ";
-	return 0;
+    return 0;
 }
