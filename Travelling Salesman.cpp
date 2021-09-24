@@ -13,21 +13,21 @@ int tsp(int mask,int pos)
     // no recursion, use dp
     if(dp[mask][pos]!=INT_MAX) return dp[mask][pos];
 
-	for(int city=0;city<n;city++)
-		if((mask&(1<<city))==0) // city not visited
-			dp[mask][pos]=min(dp[mask][pos],dist[pos][city]+tsp(mask|(1<<city),city));
+    for(int city=0;city<n;city++)
+	if((mask&(1<<city))==0) // city not visited
+		dp[mask][pos]=min(dp[mask][pos],dist[pos][city]+tsp(mask|(1<<city),city));
 		
-	return dp[mask][pos];
+    return dp[mask][pos];
 } 
 
 int main()
 {
-	cin >> n;
+    cin >> n;
     dp.resize(1<<n,vt<int>(n,INT_MAX));
     dist.resize(n,vt<int>(n));
     
     for(int i=0;i<n;i++) for(int j=0;j<n;j++) cin >> dist[i][j];
     cout << tsp(1,0) << endl;
     
-	return 0;
+    return 0;
 }
